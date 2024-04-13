@@ -1,7 +1,8 @@
-
 import glob
 import pathlib
+
 INPUTS_DIR = pathlib.Path("inputs")
+
 
 def fetch(caller_path: str):
     stem = pathlib.Path(caller_path).stem
@@ -11,5 +12,5 @@ def fetch(caller_path: str):
 
 
 def readlines(path):
-    with open(path, 'r') as f:
+    with open(path, "r") as f:
         return f.readlines()

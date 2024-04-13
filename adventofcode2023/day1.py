@@ -6,7 +6,7 @@ def digits(string: str) -> list[int]:
 
     Returns:
         list[int]: a list of only the digits in the string
-        
+
     >>> digits("he3llo4 wo8rld!")
     [3, 4, 8]
     """
@@ -26,17 +26,20 @@ def line_int(line: str) -> int:
     """
     d = digits(line)
     assert len(d) > 0
-    return d[0]*10 + d[-1]
+    return d[0] * 10 + d[-1]
+
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
-    
+
     import aocinput
+
     inputs = aocinput.fetch(__file__)
     lines = aocinput.readlines(inputs[0])
     sum = 0
     for line in lines:
         sum += line_int(line)
     print(sum)
-    #TODO implement a test day day1 part 1. The answer should be 54388
+    # TODO implement a test day day1 part 1. The answer should be 54388
