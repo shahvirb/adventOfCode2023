@@ -29,16 +29,23 @@ def line_int(line: str) -> int:
     return d[0] * 10 + d[-1]
 
 
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
-
+def solve_p1():
+    """
+    >>> solve_p1()
+    54388
+    """
     import aocinput
 
     lines = aocinput.read_days_input(__file__)
     sum = 0
     for line in lines:
         sum += line_int(line)
-    print(sum)
-    # TODO implement a test day day1 part 1. The answer should be 54388
+    return sum
+
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()
+
+    print(solve_p1())
