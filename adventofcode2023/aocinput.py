@@ -1,12 +1,12 @@
 import glob
 import pathlib
 
-INPUTS_DIR = pathlib.Path("inputs")
+INPUTS_DIR = pathlib.Path("data")
 
 
-def fetch(caller_path: str):
+def find(caller_path: str, ext: str):
     stem = pathlib.Path(caller_path).stem
-    search_path = INPUTS_DIR / pathlib.Path(stem + ".txt")
+    search_path = INPUTS_DIR / pathlib.Path(stem + ext)
     # TODO why does this need to be cast into a string?
     return glob.glob(str(search_path))
 
@@ -17,4 +17,4 @@ def readlines(path):
 
 
 def read_days_input(caller_path: str):
-    return readlines(fetch(caller_path)[0])
+    return readlines(find(caller_path, ".input")[0])
