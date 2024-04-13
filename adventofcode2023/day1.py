@@ -21,9 +21,11 @@ def line_int(line: str) -> int:
     """
     >>> line_int("he3llo4 wo8rld!")
     38
+    >>> line_int("threehqv2")
+    22
     """
     d = digits(line)
-    assert len(d) > 1
+    assert len(d) > 0
     return d[0]*10 + d[-1]
 
 if __name__ == "__main__":
@@ -31,4 +33,10 @@ if __name__ == "__main__":
     doctest.testmod()
     
     import aocinput
-    aocinput.fetch(__file__)
+    inputs = aocinput.fetch(__file__)
+    lines = aocinput.readlines(inputs[0])
+    sum = 0
+    for line in lines:
+        sum += line_int(line)
+    print(sum)
+    #TODO implement a test day day1 part 1. The answer should be 54388
