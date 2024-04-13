@@ -36,8 +36,7 @@ if __name__ == "__main__":
 
     import aocinput
 
-    inputs = aocinput.fetch(__file__)
-    lines = aocinput.readlines(inputs[0])
+    lines = aocinput.read_days_input(__file__)
     sum = 0
     for line in lines:
         sum += line_int(line)

@@ -14,3 +14,7 @@ def fetch(caller_path: str):
 def readlines(path):
     with open(path, "r") as f:
         return f.readlines()
+
+
+def read_days_input(caller_path: str):
+    return readlines(fetch(caller_path)[0])
