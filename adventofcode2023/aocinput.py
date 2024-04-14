@@ -19,6 +19,7 @@ def readlines(path):
 def read_days_input(caller_path: str):
     return readlines(find(caller_path, ".input")[0])
 
+
 def read_answer(stem: str) -> str:
     search_path = INPUTS_DIR / pathlib.Path(stem + ".answer")
     filepath = glob.glob(str(search_path))[0]
