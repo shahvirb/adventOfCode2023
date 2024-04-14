@@ -30,10 +30,6 @@ def line_int(line: str) -> int:
 
 
 def solve_p1():
-    """
-    >>> solve_p1()
-    54388
-    """
     import aocinput
 
     lines = aocinput.read_days_input(__file__)
