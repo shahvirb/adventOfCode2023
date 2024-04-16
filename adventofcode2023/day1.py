@@ -33,13 +33,13 @@ def line_int(line: str) -> int:
     return d[0] * 10 + d[-1]
 
 
-def solve():
+def solve(line_preprocessor=None):
     import aocinput
 
     lines = aocinput.read_days_input(__file__)
     sum = 0
     for line in lines:
-        sum += line_int(line)
+        sum += line_int(line_preprocessor(line) if line_preprocessor else line)
     return sum
 
 
@@ -105,11 +105,14 @@ def words_to_digits(line: str) -> str:
     return None
 
 
+def solve_p2():
+    return solve(line_preprocessor=words_to_digits)
+
+
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
 
     print(solve_p1())
-
-    words_to_digits("eightwothree")
+    print(solve_p2())
