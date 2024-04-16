@@ -33,18 +33,15 @@ def line_int(line: str) -> int:
     return d[0] * 10 + d[-1]
 
 
-def solve(line_preprocessor=None):
-    import aocinput
-
-    lines = aocinput.read_days_input(__file__)
+def solve(lines, line_preprocessor=None):
     sum = 0
     for line in lines:
         sum += line_int(line_preprocessor(line) if line_preprocessor else line)
     return sum
 
 
-def solve_p1():
-    return solve()
+def solve_p1(lines):
+    return solve(lines)
 
 
 def replace_at(line: str, a: str, idx: int, b: str) -> str:
@@ -105,8 +102,8 @@ def words_to_digits(line: str) -> str:
     return None
 
 
-def solve_p2():
-    return solve(line_preprocessor=words_to_digits)
+def solve_p2(lines):
+    return solve(lines, line_preprocessor=words_to_digits)
 
 
 if __name__ == "__main__":
@@ -114,5 +111,11 @@ if __name__ == "__main__":
 
     doctest.testmod()
 
-    print(solve_p1())
-    print(solve_p2())
+    import aocinput
+
+    lines = aocinput.read_days_input(__file__)
+    print(solve_p1(lines))
+    print(solve_p2(lines))
+
+    p2sample = aocinput.read_filename_lines("day1.part2sample.input")
+    print(solve_p2(p2sample))
