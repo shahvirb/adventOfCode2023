@@ -21,6 +21,7 @@ class TestCase:
         TestCase("day1", day1.solve_p2, "day1.part2"),
         # Day 2
         TestCase("day2.part1sample", day2.solve_p1),
+        TestCase("day2", day2.solve_p1),
     ],
 )
 def test_solve(tc):
