@@ -30,7 +30,9 @@ def line_int(line: str) -> int:
     d = digits(line)
     # TODO why calculate all the digits in the line? We just need the first and the last.
     assert len(d) > 0
-    return d[0] * 10 + d[-1]
+    value = d[0] * 10 + d[-1]
+    assert 10 <= value <= 99
+    return value
 
 
 def solve(lines, line_preprocessor=None):
@@ -99,10 +101,20 @@ def words_to_digits(line: str) -> str:
         else:
             return line
 
-    return None
+    return line
 
 
 def solve_p2(lines):
+    """
+    >>> solve_p2(['p2'])
+    22
+    >>> solve_p2(['fjfskl4'])
+    44
+    >>> solve_p2(['one79'])
+    19
+    >>> solve_p2(['oneas'])
+    11
+    """
     return solve(lines, line_preprocessor=words_to_digits)
 
 
@@ -114,7 +126,7 @@ if __name__ == "__main__":
     import aocinput
 
     lines = aocinput.read_days_input(__file__)
-    print(solve_p1(lines))
+    # print(solve_p1(lines))
     print(solve_p2(lines))
 
     p2sample = aocinput.read_filename_lines("day1.part2sample.input")
