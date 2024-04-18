@@ -11,12 +11,12 @@ def find(caller_path: str, ext: str):
     return glob.glob(str(search_path))
 
 
-def readlines(path):
+def readlines(path) -> list[str]:
     with open(path, "r") as f:
         return f.readlines()
 
 
-def read_filename_lines(filename: str):
+def read_filename_lines(filename: str) -> list[str]:
     """Reads a file in the data dir with the given filename
 
     Args:
@@ -27,7 +27,7 @@ def read_filename_lines(filename: str):
     return readlines(filepath)
 
 
-def read_days_input(caller_path: str):
+def read_days_input(caller_path: str) -> list[str]:
     return readlines(find(caller_path, ".input")[0])
 
 
