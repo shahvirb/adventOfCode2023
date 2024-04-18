@@ -1,5 +1,5 @@
 from adventofcode2023 import aocinput
-from adventofcode2023 import day1, day1v2
+from adventofcode2023 import day1
 from dataclasses import dataclass
 from typing import Callable
 import pytest
@@ -15,9 +15,9 @@ class TestCase:
 @pytest.mark.parametrize(
     "tc",
     [
-        TestCase("day1", day1v2.solve_p1),
-        TestCase("day1.part2sample", day1v2.solve_p2),
-        TestCase("day1", day1v2.solve_p2, "day1.part2"),
+        TestCase("day1", day1.solve_p1),
+        TestCase("day1.part2sample", day1.solve_p2),
+        TestCase("day1", day1.solve_p2, "day1.part2"),
     ],
 )
 def test_solve(tc):
