@@ -1,3 +1,6 @@
+import typing
+
+
 def is_symbol(char: str):
     """
     >>> is_symbol(".")
@@ -20,17 +23,16 @@ class Grid:
     @property
     def rows(self) -> int:
         return len(self.array)
-    
+
     @property
     def cols(self) -> int:
         return len(self.array[0])
 
-    #TODO how can we set the return type to generator?
-    def find_symbols(self):
+    def find_symbols(self) -> typing.Iterator[tuple[int, int]]:
         for r in range(self.rows):
             for c in range(self.cols):
                 if is_symbol(self.array[r][c]):
-                    yield (r,c)
+                    yield (r, c)
 
     def calc_sum(self) -> int:
         return 0
