@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Callable
 import pytest
 
+#TODO how can we use pytest-mypy to run mypy during tests?
 
 @dataclass
 class TestCase:
