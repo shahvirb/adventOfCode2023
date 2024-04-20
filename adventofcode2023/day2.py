@@ -82,7 +82,7 @@ class Game:
         )
         self.reset_bags()
         return valid
-    
+
     def power(self) -> int:
         return self.reds.max_drawn * self.greens.max_drawn * self.blues.max_drawn
 
@@ -129,7 +129,9 @@ def solve_p2(lines) -> int:
 
 
 if __name__ == "__main__":
-    solve_line("Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red")
+    solve_line(
+        "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red"
+    )
     import doctest
 
     doctest.testmod()
